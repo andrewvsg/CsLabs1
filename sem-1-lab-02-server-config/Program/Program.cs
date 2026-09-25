@@ -37,6 +37,7 @@ public class Program
         {
             isPassword = false;
         }
+        //вывод результата
 
         var res = CheckConfiguration(maxPlayers,ram,isPublic,isPassword);
         Console.WriteLine(res);
@@ -45,27 +46,37 @@ public class Program
 
     public static string CheckConfiguration(int maxPlayers, int ram, bool isPublic, bool isPassword)
     {
+        var troubles = "";
+
+
         if (maxPlayers <= 0)
         {
-            return "Запуск невозможен: количество игроков должно быть больше нуля.";
+            troubles += "Запуск невозможен: количество игроков должно быть больше нуля.\n";
         }
 
         if (ram < 2)
         {
-            return "Запуск невозможен: серверу недостаточно оперативной памяти.";
+            troubles += "Запуск невозможен: серверу недостаточно оперативной памяти.\n";
         }
 
         if (isPublic && isPassword)
         {
-            return "Запуск возможен с предупреждением: публичный сервер защищён паролем.";
-        }
+            troubles += "Запуск возможен с предупреждением: публичный сервер защищён паролем.\n";
+        }0
+        
 
         if (maxPlayers > 100 && ram < 8)
         {
-            return "Запуск возможен с предупреждением: для такого количества игроков рекомендуется больше оперативной памяти.";
+            troubles += "Запуск возможен с предупреждением: для такого количества игроков рекомендуется больше оперативной памяти.\n";
         }
 
-        return "Сервер готов к запуску.";
+        if(troubles == "")
+        {
+            return "Сервер готов к запуску.";
+            
+        }
+        return troubles;
+
     }
 
 
