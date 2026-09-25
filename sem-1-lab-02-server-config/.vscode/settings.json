@@ -1,0 +1,11 @@
+{
+    "dotnet.defaultSolution": "Program.sln",
+    // "editor.quickSuggestions": {
+    //     "other": false,
+    //     "comments": false,
+    //     "strings": false
+    // },
+    // "editor.hover.enabled": false,
+    // "editor.parameterHints.enabled": false
+}
+
