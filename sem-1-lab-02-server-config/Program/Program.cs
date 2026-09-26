@@ -62,7 +62,7 @@ public class Program
         if (isPublic && isPassword)
         {
             troubles += "Запуск возможен с предупреждением: публичный сервер защищён паролем.\n";
-        }0
+        }
         
 
         if (maxPlayers > 100 && ram < 8)
